@@ -1,0 +1,24 @@
+{
+  "name": "electron-assignment",
+  "version": "1.0.0",
+  "description": "\"# electron-assignment\"",
+  "main": "electron-starter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ns17diploma/electron-assignment.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ns17diploma/electron-assignment/issues"
+  },
+  "homepage": "https://github.com/ns17diploma/electron-assignment#readme",
+  "devDependencies": {
+    "jquery": "^3.2.1",
+    "jsonfile": "^4.0.0",
+    "semantic-ui": "^2.2.13"
+  }
+}
