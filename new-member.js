@@ -4,6 +4,8 @@ var filename = 'members.json'
 
 $(function(){
 
+  // init_value()
+
   // save button
   $('#btn-save').click(function(){
 
@@ -40,12 +42,26 @@ $(function(){
 function validate()
 {
   $result = true
-  console.log('validate')
+  
+  // accept 6 digits only
   if (!/^\d{6}$/.test($('#member-number').val())) {
-    $('#member-number').closest('.field').addClass('error')
     $('#member-number').after(error_label_html('member number accept 6 digits only'));
     $result = false
+    validation_failed('#member-number')
   }
+
+
+  // modulus 11
+  let mn = $('#member-number').val();
+  let totalmn = mn[0] * 6 + mn[1] * 5 +  mn[2] * 4 +  mn[3] * 3 +  mn[4] * 2 +  mn[5] * 1;
+  if ((totalmn % 11) !== 0) {
+    $('#member-number').after(error_label_html('member number must follow modulus 11 check rules'));
+    $result = false
+    validation_failed('#member-number')
+  }
+
+
+
   return $result
 }
 
@@ -70,4 +86,14 @@ function error_label_html(message)
   return '<div class="ui pointing basic red label error-message">' +
     message +
   '</div>'
+}
+
+function validation_failed(input_id) {
+  $(input_id).closest('.field').addClass('error')
+}
+
+function init_value()
+{
+  $('#member-number').val('132743')
+
 }
