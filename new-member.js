@@ -1,7 +1,10 @@
 var jsf = require('jsonfile')
 var fs = require('fs')
 var filename = 'members.json'
+
 $(function(){
+
+  // save button
   $('#btn-save').click(function(){
     if (validate()) {
       let member = {}
@@ -14,6 +17,11 @@ $(function(){
     } else {
       console.log('error')
     }
+  })
+
+  // clear button
+  $('#btn-clear').click(function(){
+    clearInput()
   })
 })
 
@@ -30,9 +38,13 @@ function validate()
 function appendMember(member)
 {
   if (!fs.existsSync(filename)) {
-      jsf.writeFileSync(filename, [])
+    jsf.writeFileSync(filename, [])
   }
   var members = jsf.readFileSync(filename)
   members.push(member)
   jsf.writeFileSync(filename, members)
+}
+
+function clearInput(){
+  $('.input-save').val('');
 }
