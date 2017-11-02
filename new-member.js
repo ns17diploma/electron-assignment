@@ -7,7 +7,6 @@ $(function(){
   // save button
   $('#btn-save').click(function(){
 
-    $('.error-message').remove()
     if (validate()) {
       let member = {}
       $('.input-save').each(function(){
@@ -20,7 +19,7 @@ $(function(){
     } else {
       console.log('error')
       let error_message_html = `
-      <div class="ui negative message">
+      <div class="ui negative message error-message">
         <i class="close icon"></i>
         <div class="header">
           There is errors in the form
@@ -35,6 +34,10 @@ $(function(){
   // clear button
   $('#btn-clear').click(function(){
     clearInput()
+    $('.error-message').remove()
+    $('.error.field').removeClass('error')
+
+
   })
 })
 
@@ -42,7 +45,9 @@ function validate()
 {
   $result = true
   console.log('validate')
-  if (true) {
+  if (!/^\d{6}$/.test($('#member-number').val())) {
+    $('#member-number').closest('.field').addClass('error')
+    $('#member-number').after(error_label_html('member number accept 6 digits only'));
     $result = false
   }
   return $result
@@ -60,4 +65,11 @@ function appendMember(member)
 
 function clearInput(){
   $('.input-save').val('');
+}
+
+function error_label_html(message)
+{
+  return '<div class="ui pointing basic red label error-message">' +
+    message +
+  '</div>'
 }
