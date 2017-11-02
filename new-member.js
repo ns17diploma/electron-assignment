@@ -34,10 +34,6 @@ $(function(){
   // clear button
   $('#btn-clear').click(function(){
     clearInput()
-    $('.error-message').remove()
-    $('.error.field').removeClass('error')
-
-
   })
 })
 
@@ -64,7 +60,9 @@ function appendMember(member)
 }
 
 function clearInput(){
-  $('.input-save').val('');
+  $('.input-save').val('')
+  $('.error-message').remove()
+  $('.error.field').removeClass('error')
 }
 
 function error_label_html(message)
