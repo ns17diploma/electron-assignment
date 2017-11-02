@@ -45,19 +45,23 @@ function validate()
   
   // accept 6 digits only
   if (!/^\d{6}$/.test($('#member-number').val())) {
-    $('#member-number').after(error_label_html('member number accept 6 digits only'));
+    error_label_html('#member-number', 'member number accept 6 digits only')
     $result = false
-    validation_failed('#member-number')
   }
 
 
   // modulus 11
   let mn = $('#member-number').val();
-  let totalmn = mn[0] * 6 + mn[1] * 5 +  mn[2] * 4 +  mn[3] * 3 +  mn[4] * 2 +  mn[5] * 1;
+
+  let totalmn = 0;
+  for(var i = 0; i<$('#member-number').val().length; i++){
+    let x = 6 - i;
+    totalmn += $('#member-number').val()[i] * x;
+  }
+
   if ((totalmn % 11) !== 0) {
-    $('#member-number').after(error_label_html('member number must follow modulus 11 check rules'));
+    error_label_html('#member-number', 'member number must follow modulus 11 check rules')
     $result = false
-    validation_failed('#member-number')
   }
 
 
@@ -81,15 +85,14 @@ function clearInput(){
   $('.error.field').removeClass('error')
 }
 
-function error_label_html(message)
+function error_label_html(input_id, message)
 {
-  return '<div class="ui pointing basic red label error-message">' +
+  let message = '<div class="ui pointing basic red label error-message">' +
     message +
   '</div>'
-}
-
-function validation_failed(input_id) {
+  $(input_id).after(message);
   $(input_id).closest('.field').addClass('error')
+
 }
 
 function init_value()
