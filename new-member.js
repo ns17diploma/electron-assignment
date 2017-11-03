@@ -4,7 +4,7 @@ var filename = 'members.json'
 
 $(function(){
 
-  // init_value()
+  seed_json();
 
   // save button
   $('#btn-save').click(function(){
@@ -98,5 +98,29 @@ function error_label_html(input_id, message)
 function init_value()
 {
   $('#member-number').val('132743')
+}
+
+function seed_json()
+{
+  if (!fs.existsSync(filename)) {
+    let seed_data = [
+      {"member-number":"135271","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot00","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135272","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot01","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135273","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot02","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135274","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot03","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135275","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot04","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135276","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot05","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135277","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot06","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135278","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot07","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135279","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot08","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135271","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot09","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135272","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot10","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135273","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot11","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135274","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot12","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135275","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot13","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
+      {"member-number":"135276","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot14","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"}
+    ]
+    jsf.writeFileSync(filename, seed_data)
+  }
 
 }

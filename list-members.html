@@ -2,12 +2,48 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <title>Hello World!</title>
+    <title>List Members</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
+    
+    <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
+
+    <script src="node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="semantic/dist/semantic.min.js"></script>
+
+    <script>if (window.module) module = window.module;</script>
+
   </head>
   <body>
-    <h1>Members table</h1>
-    We are using node <script>document.write(process.versions.node)</script>,
-    Chrome <script>document.write(process.versions.chrome)</script>,
-    and Electron <script>document.write(process.versions.electron)</script>.
+
+    <div class="ui hidden divider"></div>
+      
+    <div class="ui text container" id="main-container">
+     <h1>Members table</h1>
+      <table id="members-table" class="ui very basic table">
+        <thead>
+          <tr>
+            <th>Number</th>
+            <th>First name</th>
+            <th>Last name</th>
+            <th>Address</th>
+            <th>Sex</th>
+            <th>Date of birth</th>
+            <th>Join date</th>
+            <th>Type</th>
+            <th>Subs month</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        </tbody>
+      </table>
+    </div>
+
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+    <div class="ui hidden divider"></div>
+
+    <script src="list-member.js"></script>
   </body>
 </html>
