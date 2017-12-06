@@ -5,7 +5,6 @@ var filename = 'members.json'
 
 $(function(){
 
-
   let members = jsf.readFileSync(filename)
 
   if (members.length > 0) {

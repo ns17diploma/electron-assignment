@@ -81,7 +81,7 @@ function appendMember(member)
 
 function clearInput(){
   $('.input-save').val('')
-  $('.error-message').remove()
+  $('error-message').remove()
   $('.error.field').removeClass('error')
 }
 
