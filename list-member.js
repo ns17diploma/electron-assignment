@@ -5,21 +5,16 @@ var filename = 'members.json'
 
 $(function(){
 
-
   let members = jsf.readFileSync(filename)
-
   if (members.length > 0) {
 
     let member_page_groups = chunk(members, 10)
-
     make_table(member_page_groups[0])
 
     if (member_page_groups.length > 1) {
       create_pagination(member_page_groups)
     }
   }
-
-
 })
 
 function make_table(members)
@@ -44,8 +39,6 @@ function make_table(members)
 }
 
 function create_pagination(pages) {
-
-  $('#members-pagination').html('')
 
   for (var i = 0; i < pages.length; i++) {
     let item_html = `<span class="item" data-page="${i}">${i+1}</span>`
