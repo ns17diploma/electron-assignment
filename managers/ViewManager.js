@@ -7,10 +7,9 @@ class ViewManager{
 
   clearInput(){
     $('.input-save').val('')
-    $('.error-message').remove()
+    $('error-message').remove()
     $('.error.field').removeClass('error')
   }
-
 
   error_label_html(input_id, message)
   {
@@ -21,6 +20,7 @@ class ViewManager{
     $(input_id).closest('.field').addClass('error')
 
   }
+
 }
 
 module.exports = ViewManager
