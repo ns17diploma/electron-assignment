@@ -1,4 +1,5 @@
-const JsonFileManager = require('./../manager/JsonFileManager')
+const JsonFileManager = require('./JsonFileManager')
+const jsf = require('jsonfile')
 
 class Seeder extends JsonFileManager {
 
@@ -222,6 +223,8 @@ class Seeder extends JsonFileManager {
       {"member-number":"135275","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot13","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"},
       {"member-number":"135276","type":"F","join-date":"1990-03-08","sub-due-month":"JAN","first-name":"Elliot14","last-name":"Yap","sex":"M","dob":"1987-03-09","address01":"13, Jln Suliman 12,","address02":"Taman Demilasi","address03":"Kulai","postalcode":"38273"}
     ]
-    jsf.writeFileSync(filename, seed_data)
+    jsf.writeFileSync(this.filename, seed_data)
   }
 }
+
+module.exports = Seeder

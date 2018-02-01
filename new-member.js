@@ -3,32 +3,42 @@ const JsonFileManager = require('./managers/JsonFileManager')
 const ViewManager = require('./managers/ViewManager')
 const Member = require('./models/Member')
 const Validator = require('./managers/Validator')
+const $ = require('jquery')
+const jQuery = $
+require('./semantic/dist/semantic.js')
 
-var fs = require('fs')
 
 $(function(){
 
-  const seeder = new Seeder()
+  var seeder = new Seeder()
   if (true) {
     seeder.seed()
   }
-  const vm = new ViewManager()
-  const jfm = new JsonFileManager()
-  const validator = new Validator(vm)
+  var vm = new ViewManager()
+  var jfm = new JsonFileManager()
+  var validator = new Validator(vm)
 
 
   // save button
   $('#btn-save').click(function(){
 
-    // TODO input all input val(
     var member = new Member(
       $('#member-number').val(),
       $('#member-type').val(),
-      $('#member-join-date').val()
+      $('#member-join-date').val(),
+      $('#member-sub-due-month').val(),
+      $('#member-first-name').val(),
+      $('#member-last-name').val(),
+      $('#member-sex').val(),
+      $('#member-dob').val(),
+      $('#member-address01').val(),
+      $('#member-address02').val(),
+      $('#member-address03').val(),
+      $('#member-postalcode').val()
     );
 
 
-    if (validator.validate(member)) {
+    if (validator.validateMember(member)) {
 
       jfm.saveMember(member)
 

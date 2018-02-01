@@ -1,3 +1,4 @@
+const fs = require('fs')
 const jsf = require('jsonfile')
 
 
@@ -5,10 +6,10 @@ class JsonFileManager {
 
 	constructor() {
 
-		var filename = 'members.json'
+		this.filename = 'members.json'
 
-		if (!fs.existsSync(filename)) {
-		  jsf.writeFileSync(filename, [])
+		if (!fs.existsSync(this.filename)) {
+		  jsf.writeFileSync(this.filename, [])
 		}
 	}
 
@@ -16,7 +17,7 @@ class JsonFileManager {
 	{
 		var members = this.getMembers()
 		members.push(member.transformObj())
-		jsf.writeFileSync(filename, members)
+		jsf.writeFileSync(this.filename, members)
 	}
 
 	getMember()

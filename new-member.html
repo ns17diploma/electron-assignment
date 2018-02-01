@@ -1,17 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
-  <meta charset="UTF-8">
-  <title>New Member</title>
-  <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
-  
-  <script>if (typeof module === 'object') {window.module = module; module = undefined;}</script>
-
-  <script src="node_modules/jquery/dist/jquery.min.js"></script>
-  <script src="semantic/dist/semantic.min.js"></script>
-
-  <script>if (window.module) module = window.module;</script>
-
+    <meta charset="UTF-8">
+    <title>New Member</title>
+    <link rel="stylesheet" type="text/css" href="semantic/dist/semantic.min.css">
   </head>
   <body>
 
@@ -26,11 +18,11 @@
         <div class="two fields">
           <div class="field">
             <label>Membership Number</label>
-            <input class='input-save' name='member-number' id="member-number" type="text" value="137672">
+            <input class='input-save' id="member-number" type="text" value="137672">
           </div>
           <div class="field">
             <label>Type of Membership</label>
-            <select id="member-type" class="ui dropdown input-save" name='type'>
+            <select id="member-type" class="ui dropdown input-save">
               <option value="F">F</option>
               <option value="S">S</option>
               <option value="T">T</option>
@@ -41,11 +33,11 @@
         <div class="two fields">
           <div class="field">
             <label>Join Date</label>
-            <input id="member-join-date" class='input-save' name='join-date' type="date" value="1990-03-08">
+            <input id="member-join-date" class='input-save' type="date" value="1990-03-08">
           </div>
           <div class="field">
             <label>Subscription Due Month</label>
-            <select class="ui dropdown input-save" name='sub-due-month'>
+            <select class="ui dropdown input-save" id='member-sub-due-month'>
               <option value="JAN">January</option>
               <option value="FEB">February</option>
               <option value="MAR">March</option>
@@ -65,40 +57,40 @@
         <div class="two fields">
           <div class="field">
             <label>First name</label>
-            <input class='input-save' name='first-name' type="text" value="Elliot">
+            <input class='input-save' id='member-first-name' type="text" value="Elliot">
           </div>
           <div class="field">
             <label>Last name</label>
-            <input class='input-save' name='last-name' type="text" value="Yap">
+            <input class='input-save' id='member-last-name' type="text" value="Yap">
           </div>
         </div>
         <div class="two fields">
           <div class="field">
             <label>Sex</label>
-            <select class="ui dropdown input-save" name="sex">
+            <select class="ui dropdown input-save" id='member-sex'>
               <option value="M">Male</option>
               <option value="F">Female</option>
             </select>
           </div>
           <div class="field">
             <label>Date of Birth</label>
-            <input class='input-save' name='dob' type="date" value="1987-03-09">
+            <input class='input-save' id='member-dob' type="date" value="1987-03-09">
           </div>
         </div>
         <div class="field">
           <label>Address</label>
-          <input class='input-save' name='address01' type="text" value="13, Jln Suliman 12,">
+          <input class='input-save' id='member-address01' type="text" value="13, Jln Suliman 12,">
         </div>
         <div class="field">
-          <input class='input-save' name='address02' type="text" value="Taman Demilasi">
+          <input class='input-save' id='member-address02' type="text" value="Taman Demilasi">
         </div>
         <div class="field">
-          <input class='input-save' name='address03' type="text" value="Kulai">
+          <input class='input-save' id='member-address03' type="text" value="Kulai">
         </div>
         <div class="three fields">
           <div class="field">
             <label>Postal code</label>
-            <input class='input-save' name='postalcode' type="text" value="38273">
+            <input class='input-save' id='member-postalcode' type="text" value="38273">
           </div>
         </div>
       </div>

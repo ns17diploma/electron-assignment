@@ -7,12 +7,12 @@ class Validator {
   validateMember(member)
   {
 
-    $result = true
+    var result = true
     
     // accept 6 digits only
     if (!/^\d{6}$/.test(member.member_number)) {
       this.vm.error_label_html('#member-number', 'member number accept 6 digits only')
-      $result = false
+      result = false
     }
 
 
@@ -27,12 +27,12 @@ class Validator {
 
     if ((totalmn % 11) !== 0) {
       this.vm.error_label_html('#member-number', 'member number must follow modulus 11 check rules')
-      $result = false
+      result = false
     }
 
 
 
-    return $result
+    return result
   }  
 }
 
